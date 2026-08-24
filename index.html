@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Botânica - Lara dos Santos Andrade</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4fcf4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #container-principal {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-top: 8px solid #d32f2f;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px dashed #4caf50;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            color: #2e7d32;
+        }
+
+        .postagem {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #fafafa;
+            border-left: 5px solid #d32f2f;
+            border-radius: 4px;
+        }
+
+        .texto-destaque {
+            font-weight: bold;
+            color: #d32f2f;
+            font-size: 1.1em;
+        }
+
+        .imagem-post {
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .imagem-post img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .area-botoes {
+            margin-top: 15px;
+        }
+        
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #388e3c;
+        }
+        
+        button:disabled {
+            background-color: #9e9e9e;
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container-principal">
+        
+        <header>
+            <h1>🌿 O Mundo Verde 🌶️</h1>
+            <p><strong>Por: Lara dos Santos Andrade</strong></p>
+            <p>Explorando a magia da botânica e os segredos das plantas.</p>
+        </header>
+
+        <div class="postagem">
+            <h2>A Magia da Botânica: Muito além das folhas</h2>
+            
+            <p class="texto-destaque">A botânica é a ciência que nos conecta com a base de toda a vida na Terra: o reino vegetal.</p>
+            
+            <p>Estudar as plantas é fascinante. Elas não apenas produzem o oxigênio que respiramos através da fotossíntese, mas também fornecem alimentos, remédios e abrigos. Desde as pequenas algas até as árvores gigantes centenárias, cada planta tem um papel essencial no equilíbrio do nosso ecossistema.</p>
+            
+            <div class="area-botoes">
+                <button id="btn-post1" onclick="curtirPost1()">Achei Interessante! (<span id="contador-post1">0</span>)</button>
+            </div>
+        </div>
+
+        <div class="postagem">
+            <h2>Pimentas: Beleza Botânica e Ardência</h2>
+            
+            <p class="texto-destaque">Você sabia que a sensação de ardência da pimenta é, na verdade, um incrível mecanismo de defesa botânico?</p>
+            
+            <p>O gênero <em>Capsicum</em> engloba as nossas famosas pimentas. A substância responsável por aquele "fogo" na boca é a capsaicina. O mais curioso do ponto de vista da botânica é que a capsaicina afeta os mamíferos (como nós), mas não os pássaros! Isso acontece para que as aves possam comer os frutos e espalhar as sementes pela natureza sem sentir dor, garantindo a reprodução e sobrevivência da pimenteira.</p>
+            
+            <div class="imagem-post">
+                <img src="pimenta.jpg" alt="Linda pimenteira com pimentas vermelhas" style="max-width: 350px;">
+                <p><small><em>Pimenteira em desenvolvimento.</em></small></p>
+            </div>
+
+            <div class="area-botoes">
+                <button id="btn-post2" onclick="curtirPost2()">Adorei a Curiosidade! (<span id="contador-post2">0</span>)</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let post1Curtido = false;
+        let post2Curtido = false;
+
+        function curtirPost1() {
+            if (!post1Curtido) {
+                let span = document.getElementById("contador-post1");
+                let valorAtual = parseInt(span.innerText);
+                span.innerText = valorAtual + 1;
+                
+                let botao = document.getElementById("btn-post1");
+                botao.innerHTML = "Você já curtiu! (1)";
+                botao.disabled = true;
+                
+                post1Curtido = true;
+            }
+        }
+
+        function curtirPost2() {
+            if (!post2Curtido) {
+                let span = document.getElementById("contador-post2");
+                let valorAtual = parseInt(span.innerText);
+                span.innerText = valorAtual + 1;
+                
+                let botao = document.getElementById("btn-post2");
+                botao.innerHTML = "Você já curtiu! (1)";
+                botao.disabled = true;
+                
+                post2Curtido = true;
+            }
+        }
+    </script>
+
+</body>
+</html>
